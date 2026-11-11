@@ -1,0 +1,4 @@
+- All enquiry/quote CTAs open WhatsApp with pre-filled text via src/lib/site.ts (waLink/waMessage); company contact details live only in COMPANY there, because the business chose WhatsApp-direct enquiries.
+- Keep coverage labels and structured search data sourced from COMPANY, and hide empty contact channels so unconfirmed details cannot leak into pages.
+- Local service-area pages use one validated dynamic route and shared location data sourced from COMPANY; reject unknown areas and never equate coverage with a physical branch address, to keep location claims consistent.
+- AI service recommendations run server-side in src/lib/advisor.functions.ts via the OpenAI API. Keep OPENAI_API_KEY on the server only, and keep the JSON schema limited to the SERVICES slugs so suggestions stay limited to real services.
