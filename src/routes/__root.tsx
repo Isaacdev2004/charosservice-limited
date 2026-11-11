@@ -14,7 +14,7 @@ import appCss from "../styles.css?url";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { WhatsAppFab } from "@/components/site/WhatsApp";
-import { COMPANY } from "@/lib/site";
+import { COMPANY, SITE_ORIGIN } from "@/lib/site";
 
 function NotFoundComponent() {
   return (
@@ -75,9 +75,6 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
-    // Replace these placeholders with the app's name and description when first building the app.
-    // Each content route, / included, must still set its own head(). Never add og:image or
-    // twitter:image here: every page without its own would inherit the root's preview image.
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -88,7 +85,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: `Facilities management, property maintenance and workforce solutions across ${COMPANY.area}.` },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Charos Services Limited" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: `${SITE_ORIGIN}/favicon.png` },
+      { property: "og:image:secure_url", content: `${SITE_ORIGIN}/favicon.png` },
+      { property: "og:image:type", content: "image/png" },
+      { property: "og:image:width", content: "512" },
+      { property: "og:image:height", content: "512" },
+      { property: "og:image:alt", content: "Charos Services Limited logo" },
           ],
     scripts: [{
       type: "application/ld+json",

@@ -6,6 +6,8 @@ import grounds from "@/assets/grounds.jpg";
 import construction from "@/assets/construction.jpg";
 
 // Confirmed company details; unavailable contact channels remain hidden.
+export const SITE_ORIGIN = "https://charosservice-limited.vercel.app";
+
 export const COMPANY = {
   name: "Charos Services Limited",
   whatsapp: "447863192306", // digits only, international format, no +
